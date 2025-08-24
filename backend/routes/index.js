@@ -4,6 +4,8 @@ const indexController = require('../controllers/indexController');
 
 router.get('/', indexController.home);
 
-router.get('/get', indexController.get)
+router.get('/get', indexController.get);
+
+router.post('/post', indexController.post)
 
 module.exports = router;

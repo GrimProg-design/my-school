@@ -14,5 +14,6 @@ app.use(cors({
 app.use(express.json());
 app.use("/", indexRoutes);
 app.use('/get', indexRoutes)
+app.use('/post', indexRoutes)
 
 module.exports = app;

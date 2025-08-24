@@ -8,3 +8,9 @@ exports.home = (req, res) => {
 exports.get = (req, res) => {
     res.send("backend");
 }
+
+exports.post = (req, res) => {
+    const num = Number(req.body.num);
+    const data = num * 2;
+    res.send(String(data));
+};
