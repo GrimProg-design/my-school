@@ -1,5 +1,6 @@
 .header-wrapper {
     display: flex;
+    align-items: center;
 }
 
 .links {
@@ -17,4 +18,10 @@
 
 .links:hover {
     box-shadow: 5px 5px 13px silver;
+}
+
+.theme {
+    width: 130px;
+    height: 30px;
+    border-radius: 10px;
 }

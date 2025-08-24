@@ -1,0 +1,8 @@
+.dark-mode {
+  background-color: rgb(54, 54, 54);
+  color: rgb(195, 195, 195);
+}
+
+.header-wrapper > a {
+  color: rgb(142, 142, 142);
+}
