@@ -9,7 +9,7 @@ const errorHandler = require("./middlewares/errorHandler")
 const security = require("./middlewares/security")
 
 // * Подключаем cors * //
-app.use(corsMiddleware)
+app.use(corsMiddleware);
 //  _______________  //
 
 
@@ -22,7 +22,7 @@ mongoose.connect("mongodb://127.0.0.1:27017/for-school", {
   useUnifiedTopology: true,
 })
 .then(() => console.log('База успешно подключена'))
-.catch(err => console.log(err))
+.catch(err => console.log(err));
 // * ______________ * //
 
 // * Подключаем все * //
