@@ -16,16 +16,14 @@ exports.post = (req, res) => {
   res.send(String(data));
 };
 
-// сервер: ищем по имени
 exports.users = async (req, res) => {
   try {
     const { name } = req.body;
 
-    // ищем всех пользователей, где имя совпадает (регистронезависимо)
     const users = await User.find({ name: new RegExp(`^${name}$`, "i") });
 
     if (users.length > 0) {
-      res.json(users); // только совпадения
+      res.json(users);
     } else {
       res.json([{ name: "Пользователь не найден" }]);
     }
