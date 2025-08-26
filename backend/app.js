@@ -27,5 +27,6 @@ app.use(express.json());
 app.use("/", indexRoutes);
 app.use("/get", indexRoutes);
 app.use("/post", indexRoutes);
+app.use("/users", indexRoutes)
 
 module.exports = app;

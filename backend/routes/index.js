@@ -8,4 +8,6 @@ router.get('/get', indexController.get);
 
 router.post('/post', indexController.post)
 
+router.post("/users", indexController.users)
+
 module.exports = router;
