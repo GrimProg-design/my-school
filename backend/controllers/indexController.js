@@ -16,13 +16,16 @@ exports.post = (req, res) => {
   res.send(String(data));
 };
 
+// сервер: ищем по имени
 exports.users = async (req, res) => {
   try {
     const { name } = req.body;
-    const user = await User.findOne({ name });
 
-    if (user) {
-      res.json([user]);
+    // ищем всех пользователей, где имя совпадает (регистронезависимо)
+    const users = await User.find({ name: new RegExp(`^${name}$`, "i") });
+
+    if (users.length > 0) {
+      res.json(users); // только совпадения
     } else {
       res.json([{ name: "Пользователь не найден" }]);
     }
@@ -31,6 +34,8 @@ exports.users = async (req, res) => {
     res.status(500).json([{ name: "Ошибка сервера" }]);
   }
 };
+
+
 
 exports.add = async (req, res) => {
   try {
