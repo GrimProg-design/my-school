@@ -20,6 +20,10 @@ exports.users = async (req, res) => {
   try {
     const { name } = req.body;
 
+    if(typeof name !== "string") {
+        return res.status(400).json([{ name: "Не корректные данные" }]);
+    }
+
     const users = await User.find({ name: new RegExp(`^${name}$`, "i") });
 
     if (users.length > 0) {
@@ -28,12 +32,10 @@ exports.users = async (req, res) => {
       res.json([{ name: "Пользователь не найден" }]);
     }
   } catch (err) {
-    console.log(err);
+    console.error(err.message);
     res.status(500).json([{ name: "Ошибка сервера" }]);
-  }
+}
 };
-
-
 
 exports.add = async (req, res) => {
   try {
