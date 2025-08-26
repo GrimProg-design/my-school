@@ -8,6 +8,7 @@ export default function Header() {
             <Link to="/get" className="links">Get</Link>
             <Link to="/post" className="links">Post</Link>
             <Link to="/users" className="links">Users</Link>
+            <Link to="/add" className="links">Add user</Link>
             <Mode/>
         </header>
     )

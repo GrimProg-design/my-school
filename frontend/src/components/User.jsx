@@ -1,4 +1,5 @@
 import { useState } from "react";
+import AddUser from "./AddUser";
 
 export default function User() {
   const [value, setValue] = useState("");
@@ -20,27 +21,29 @@ export default function User() {
   }
 
   return (
-    <form onSubmit={(e) => handleSubmit(e)}>
-      <div>
-        <label htmlFor="user">Введите имя:</label>
-        <br />
-        <input
-          type="text"
-          id="user"
-          name="user"
-          onChange={(e) => setValue(e.target.value)}
-        />
-        <button type="submit">Поиск</button>
+    <div>
+      <form onSubmit={(e) => handleSubmit(e)}>
         <div>
-          {yes && (
-            <ul>
-              {data.map((user) => (
-                <li key={user._id || user.name}>{user.name}</li>
-              ))}
-            </ul>
-          )}
+          <label htmlFor="user">Введите имя:</label>
+          <br />
+          <input
+            type="text"
+            id="user"
+            name="user"
+            onChange={(e) => setValue(e.target.value)}
+          />
+          <button type="submit">Поиск</button>
+          <div>
+            {yes && (
+              <ul>
+                {data.map((user) => (
+                  <li key={user._id || user.name}>{user.name}</li>
+                ))}
+              </ul>
+            )}
+          </div>
         </div>
-      </div>
-    </form>
+      </form>
+    </div>
   );
 }

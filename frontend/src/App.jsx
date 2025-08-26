@@ -4,6 +4,7 @@ import Get from "./components/Get";
 import Header from "./components/Header";
 import Post from "./components/Post";
 import User from "./components/User";
+import AddUser from "./components/AddUser";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Route path="/get" element={<Get />} />
         <Route path="/post" element={<Post/>}/>
         <Route path="/users" element={<User/>}/>
+        <Route path="/add" element={<AddUser/>}/>
       </Routes>
     </div>
   );

@@ -8,6 +8,8 @@ router.get('/get', indexController.get);
 
 router.post('/post', indexController.post)
 
-router.post("/users", indexController.users)
+router.post("/users", indexController.users);
+
+router.post("/add", indexController.add)
 
 module.exports = router;
