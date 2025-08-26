@@ -12,6 +12,8 @@ const security = require("./middlewares/security")
 app.use(corsMiddleware)
 //  _______________  //
 
+
+// * Подключаем логгер * //
 app.use(logger);
 
 // * Подключаем базу данных * //
@@ -23,13 +25,17 @@ mongoose.connect("mongodb://127.0.0.1:27017/for-school", {
 .catch(err => console.log(err))
 // * ______________ * //
 
+// * Подключаем все * //
 app.use(express.json());
 app.use("/", indexRoutes);
 app.use("/get", indexRoutes);
 app.use("/post", indexRoutes);
 app.use("/users", indexRoutes);
 app.use("/add", indexRoutes);
+// * ______________ * //
 
+// * Обработка ошибок* //
 app.use(errorHandler)
+// * ______________ * //
 
 module.exports = app;
